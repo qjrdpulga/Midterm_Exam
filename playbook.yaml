@@ -1,0 +1,17 @@
+---
+- hosts: localhost.localdomain
+  roles:
+    - centos-elastic
+    - centos-grafana
+    - centos-lamp
+
+- hosts: server1
+  gather_facts: True
+  roles:
+    - ubuntu-elastic
+    - ubuntu-nagios
+    - ubuntu-nagios1
+    - ubuntu-nagios2
+    - ubuntu-grafana
+    - ubuntu-lamp
+  become: true
